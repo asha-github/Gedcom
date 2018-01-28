@@ -25,7 +25,8 @@ Execution :-
 		Execute the following from project directory :  
 		1. mvn clean -> Cleans up project directory.
 		2. mvn package -> Compiles and runs test cases.
-		3. mvn exec:java -Dexec.mainClass="com.aconex.gedcom.GedcomParserApplication" -Dexec.args="/Users/ashas/Projects/Gedcom/GedcomParser/src/main/resources/sampleinput.txt /Users/ashas/Projects/Gedcom/GedcomParser/output/output.xml"  -> Executes parser application with arguments. It can be executed without input and output file arguments also in which case default ones will be taken.
+		3. mvn exec:java -Dexec.mainClass="com.aconex.gedcom.GedcomParserApplication" -Dexec.args="/Users/ashas/Projects/Gedcom/GedcomParser/src/main/resources/sampleinput.txt /Users/ashas/Projects/Gedcom/GedcomParser/output/output.xml"  
+		-> Executes parser application with arguments. It can be executed without input and output file arguments also in which case default ones will be taken.
 
 	Code can be run from any IDE like Eclipse by importing the project to it and use Run as Java Application option on main class GedcomParserApplication with or without arguments as mentioned above.
 	
