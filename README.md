@@ -30,7 +30,7 @@ Execution :
 		
 		Example : mvn exec:java -Dexec.mainClass="/Users/ashas/Projects/Gedcom/GedcomParser/src/main/resources/sampleinput.txt /Users/ashas/Projects/Gedcom/GedcomParser/output/gedcom.xml"  
 		
-	Code can be run from any IDE like Eclipse by importing the project to it and use Run as Java Application option on main class GedcomParserApplication with or without arguments as mentioned above.
+	Code can be run from any IDE like Eclipse by importing the project to it and use Run as Java Application option on main class GedcomParserApplication with or without arguments.
 	
 Testcase Execution :
 	Test suite class com.aconex.gedcom.GedcomParserTestSuite is provided to run all test cases. All test cases can be invoked by running "mvn test" command also.
