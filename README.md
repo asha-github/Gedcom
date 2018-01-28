@@ -18,16 +18,18 @@ Dependencies :
 	3. Depends on junit 4 for testing.
 	
 Execution :
-	Main class is com.aconex.gedcom.GedcomParserApplication. Input file path and output file path should be given as arguments to GedcomParserApplication. First argument is taken as input file and second as output file. If input file path is not provided during execution, default file sampleinput.txt under resources folder will be taken up for parsing. If output file path is not provided during execution, output file will be created as output.xml under "output" folder in project directory.
+	Main class is com.aconex.gedcom.GedcomParserApplication. Input file path and output file path should be given as arguments to GedcomParserApplication. First argument is taken as input file and second as output file. If input file path is not provided during execution, default file sampleinput.txt under resources folder will be taken up for parsing. If output file path is not provided during execution, output file will be created as gedcom.xml under "output" folder in project directory.
 	
 	Maven execution commands :-
 	
 		Execute the following from project directory :  
 		1. mvn clean -> Cleans up project directory.
 		2. mvn package -> Compiles and runs test cases.
-		3. mvn exec:java -Dexec.mainClass="com.aconex.gedcom.GedcomParserApplication" -Dexec.args="/Users/ashas/Projects/Gedcom/GedcomParser/src/main/resources/sampleinput.txt /Users/ashas/Projects/Gedcom/GedcomParser/output/output.xml"  
-			-> Executes parser application with arguments. It can be executed without input and output file arguments also in which case default ones will be taken.
-
+		3. mvn exec:java -Dexec.mainClass="com.aconex.gedcom.GedcomParserApplication" -Dexec.args="<input file name> <output file name>"
+		-> Executes parser application with arguments. It can be executed without input and output file arguments also in which case default ones will be taken.
+		
+		Example : Dexec.args="/Users/ashas/Projects/Gedcom/GedcomParser/src/main/resources/sampleinput.txt /Users/ashas/Projects/Gedcom/GedcomParser/output/output.xml"  
+		
 	Code can be run from any IDE like Eclipse by importing the project to it and use Run as Java Application option on main class GedcomParserApplication with or without arguments as mentioned above.
 	
 Testcase Execution :
