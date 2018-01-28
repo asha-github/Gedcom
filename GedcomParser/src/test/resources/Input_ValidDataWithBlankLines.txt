@@ -1,0 +1,9 @@
+0 @I0001@ INDI
+1 NAME Elizabeth Alexandra Mary /Windsor/
+2 SURN surname
+2 GIVN givenname   
+0 @I0002@ INDI
+
+
+1 NAME Philip /Mountbatten/
+1 SEX M
