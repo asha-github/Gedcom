@@ -28,7 +28,7 @@ Execution :
 		3. mvn exec:java -Dexec.mainClass="com.aconex.gedcom.GedcomParserApplication" -Dexec.args="<input file name> <output file name>"
 		-> Executes parser application with arguments. It can be executed without input and output file arguments also in which case default ones will be taken.
 		
-		Example : mvn exec:java -Dexec.mainClass="/Users/ashas/Projects/Gedcom/GedcomParser/src/main/resources/sampleinput.txt /Users/ashas/Projects/Gedcom/GedcomParser/output/gedcom.xml"  
+		Example : mvn exec:java -Dexec.mainClass="com.aconex.gedcom.GedcomParserApplication" -Dexec.args="/Users/ashas/Projects/Gedcom/GedcomParser/src/main/resources/sampleinput.txt /Users/ashas/Projects/Gedcom/GedcomParser/output/gedcom.xml"  
 		
 	Code can be run from any IDE like Eclipse by importing the project to it and use Run as Java Application option on main class GedcomParserApplication with or without arguments.
 	
