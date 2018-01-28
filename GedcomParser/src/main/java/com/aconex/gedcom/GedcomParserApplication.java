@@ -14,7 +14,7 @@ public class GedcomParserApplication {
 
     public static String DEFAULT_INPUT_FILE_PATH = "src/main/resources/sampleinput.txt";
 
-    public static String DEFAULT_OUTPUT_FILE_PATH = "output/output.xml";
+    public static String DEFAULT_OUTPUT_FILE_PATH = "output/gedcom.xml";
 
     public static void main(String[] args) {
 
