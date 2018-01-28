@@ -33,7 +33,8 @@ public class TextDataReader implements IGedcomDataReader {
         logger.log(Level.INFO, "Reading input text data file");
         DataStore dataStore = DataStore.getDataStore();
         try (Stream<String> inputStream = Files.lines(Paths.get(file), Charset.defaultCharset())) {
-            List<String> inputLines = inputStream.filter(inputData -> (inputData != null && !inputData.isEmpty()))
+            List<String> inputLines = inputStream
+                    .filter(inputData -> (inputData != null && !inputData.trim().isEmpty()))
                     .collect(Collectors.toCollection(LinkedList::new));
             for (String inputData : inputLines) {
                 dataStore.addNode(getDataNode(inputData));
@@ -47,7 +48,8 @@ public class TextDataReader implements IGedcomDataReader {
 
     /**
      * Method to create the data node for each extracted line from input file
-     * text.
+     * text. Format expected is LEVEL TAG-OR-ID [DATA]. Level and TAG-OR-ID is
+     * considered mandatory. If not present, exception is thrown.
      * 
      * @param inputData
      * @return
@@ -55,33 +57,32 @@ public class TextDataReader implements IGedcomDataReader {
      */
     private DataNode getDataNode(String inputData) throws GedcomParserException {
         logger.log(Level.INFO, "Creating data node for input > " + inputData);
-        String[] inputStringArray = inputData.split("\\s+");
+        String[] inputStringArray = inputData.trim().split("\\s+", 3);
         String id = null;
         String tag = null;
+        String data = null;
         int level = 0;
         try {
             level = Integer.parseInt(inputStringArray[0]);
         } catch (NumberFormatException ex) {
             throw new GedcomParserException(GedcomParserErrors.LEVEL_INFO_NOT_FOUND);
         }
-        StringBuffer data = new StringBuffer("");
-        for (int i = 1; i < inputStringArray.length; i++) {
-            String input = inputStringArray[i];
-            if (input.matches(ID_PATTERN)) {
-                id = input;
-            } else if (input.matches(TAG_PATTERN)) {
-                tag = input;
-            } else {
-                if (data.length() != 0) {
-                    data.append(" ");
-                }
-                data.append(input);
+        if (inputStringArray[1].matches(ID_PATTERN)) {
+            id = inputStringArray[1];
+            if (inputStringArray.length == 3) {
+                tag = inputStringArray[2];
             }
-        }
-        if (id == null && tag == null) {
+        } else if (inputStringArray[1].matches(TAG_PATTERN)) {
+            tag = inputStringArray[1];
+        } else {
             throw new GedcomParserException(GedcomParserErrors.TAG_OR_ID_NOT_PRESENT);
         }
-        DataNode node = new DataNode(level, id, tag, data.toString());
+
+        if (inputStringArray.length == 3) {
+            data = inputStringArray[2];
+        }
+
+        DataNode node = new DataNode(level, id, tag, data);
         return node;
     }
 

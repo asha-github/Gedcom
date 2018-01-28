@@ -17,7 +17,7 @@ Dependencies :
 	2. Build tool used is maven.
 	3. Depends on junit 4 for testing.
 	
-Execution :-
+Execution :
 	Main class is com.aconex.gedcom.GedcomParserApplication. Input file path and output file path should be given as arguments to GedcomParserApplication. First argument is taken as input file and second as output file. If input file path is not provided during execution, default file sampleinput.txt under resources folder will be taken up for parsing. If output file path is not provided during execution, output file will be created as output.xml under "output" folder in project directory.
 	
 	Maven execution commands :-
@@ -25,14 +25,15 @@ Execution :-
 		Execute the following from project directory :  
 		1. mvn clean -> Cleans up project directory.
 		2. mvn package -> Compiles and runs test cases.
-		3. mvn exec:java -Dexec.mainClass="com.aconex.gedcom.GedcomParserApplication" -Dexec.args="/Users/ashas/Projects/Gedcom/GedcomParser/src/main/resources/sampleinput.txt /Users/ashas/Projects/Gedcom/GedcomParser/output/output.xml"  -> Executes parser application with arguments. It can be executed without input and output file arguments also in which case default ones will be taken.
+		3. mvn exec:java -Dexec.mainClass="com.aconex.gedcom.GedcomParserApplication" -Dexec.args="/Users/ashas/Projects/Gedcom/GedcomParser/src/main/resources/sampleinput.txt /Users/ashas/Projects/Gedcom/GedcomParser/output/output.xml"  
+			-> Executes parser application with arguments. It can be executed without input and output file arguments also in which case default ones will be taken.
 
 	Code can be run from any IDE like Eclipse by importing the project to it and use Run as Java Application option on main class GedcomParserApplication with or without arguments as mentioned above.
 	
-Testcase Execution :-
+Testcase Execution :
 	Test suite class com.aconex.gedcom.GedcomParserTestSuite is provided to run all test cases. All test cases can be invoked by running "mvn test" command also.
 
 Assumptions Taken :
 	1. If there is any error while parsing any line in the input file, I assume that the expected behaviour is to stop parsing rather than continuing with the next line. 
 	2. I am assuming that the program is not expected to be run in an environment where memory is a big constraint. If it is so, intermediate data store creation can be avoided. I have kept the intermediate data store to keep the design flexible.
-	
+	3. Format is strictly followed as "LEVEL TAG-OR-ID [DATA]". In the sample input, entries like "1 FAMC @F0005@" is there. I am assuming "@F0005@" to be a DATA field rather than ID field eventhough it is surrounded by @ symbol as it does not come as second element.
