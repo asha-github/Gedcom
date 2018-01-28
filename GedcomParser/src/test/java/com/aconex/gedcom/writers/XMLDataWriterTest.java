@@ -36,20 +36,6 @@ public class XMLDataWriterTest {
         Mockito.when(XMLOutputFactory.newInstance()).thenReturn(xmlFactory);
     }
 
-    @Test
-    public void test_OutputFileNotCreatable() throws Exception {
-        Throwable exception = null;
-        try {
-            writer.convert("assa/asa", null);
-        } catch (Throwable ex) {
-            exception = ex;
-        }
-        Assert.assertTrue(exception instanceof GedcomParserException);
-        Assert.assertEquals(((GedcomParserException) exception).getErrorMessage(),
-                GedcomParserErrors.OUTPUT_FILE_CREATION_FAILED.getErrorMessage());
-        Mockito.verify(mockXmlStreamWriter, Mockito.times(0)).writeStartElement(Mockito.anyObject());
-    }
-
     /**
      * Test input content
      * 
