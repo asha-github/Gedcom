@@ -73,6 +73,9 @@ public class XMLDataWriter implements IGedcomDataWriter {
             outputFile.delete();
         }
         try {
+            if (!outputFile.getParentFile().exists()) {
+                outputFile.getParentFile().mkdirs();
+            }
             outputFile.createNewFile();
         } catch (IOException e) {
             throw new GedcomParserException(GedcomParserErrors.OUTPUT_FILE_CREATION_FAILED);
