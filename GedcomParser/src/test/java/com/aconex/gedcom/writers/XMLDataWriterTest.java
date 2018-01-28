@@ -17,8 +17,6 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 import com.aconex.gedcom.core.DataNode;
-import com.aconex.gedcom.exception.GedcomParserErrors;
-import com.aconex.gedcom.exception.GedcomParserException;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(XMLOutputFactory.class)

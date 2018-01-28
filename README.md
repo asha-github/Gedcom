@@ -29,6 +29,9 @@ Execution :-
 
 	Code can be run from any IDE like Eclipse by importing the project to it and use Run as Java Application option on main class GedcomParserApplication with or without arguments as mentioned above.
 	
+Testcase Execution :-
+	Test suite class com.aconex.gedcom.GedcomParserTestSuite is provided to run all test cases. All test cases can be invoked by running "mvn test" command also.
+
 Assumptions Taken :
 	1. If there is any error while parsing any line in the input file, I assume that the expected behaviour is to stop parsing rather than continuing with the next line. 
 	2. I am assuming that the program is not expected to be run in an environment where memory is a big constraint. If it is so, intermediate data store creation can be avoided. I have kept the intermediate data store to keep the design flexible.
