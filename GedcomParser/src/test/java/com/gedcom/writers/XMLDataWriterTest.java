@@ -1,4 +1,4 @@
-package com.aconex.gedcom.writers;
+package com.gedcom.writers;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -16,7 +16,7 @@ import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import com.aconex.gedcom.core.DataNode;
+import com.gedcom.core.DataNode;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(XMLOutputFactory.class)

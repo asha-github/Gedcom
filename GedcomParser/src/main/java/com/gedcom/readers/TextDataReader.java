@@ -1,4 +1,4 @@
-package com.aconex.gedcom.readers;
+package com.gedcom.readers;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -11,10 +11,10 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import com.aconex.gedcom.core.DataNode;
-import com.aconex.gedcom.core.DataStore;
-import com.aconex.gedcom.exception.GedcomParserErrors;
-import com.aconex.gedcom.exception.GedcomParserException;
+import com.gedcom.core.DataNode;
+import com.gedcom.core.DataStore;
+import com.gedcom.exception.GedcomParserErrors;
+import com.gedcom.exception.GedcomParserException;
 
 /**
  * Reader implementation for the input data in text format

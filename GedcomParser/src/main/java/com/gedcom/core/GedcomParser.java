@@ -1,14 +1,14 @@
-package com.aconex.gedcom.core;
+package com.gedcom.core;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.aconex.gedcom.exception.GedcomParserErrors;
-import com.aconex.gedcom.exception.GedcomParserException;
-import com.aconex.gedcom.readers.GedcomDataReaderFactory;
-import com.aconex.gedcom.readers.IGedcomDataReader;
-import com.aconex.gedcom.writers.GedcomDataWriterFactory;
-import com.aconex.gedcom.writers.IGedcomDataWriter;
+import com.gedcom.exception.GedcomParserErrors;
+import com.gedcom.exception.GedcomParserException;
+import com.gedcom.readers.GedcomDataReaderFactory;
+import com.gedcom.readers.IGedcomDataReader;
+import com.gedcom.writers.GedcomDataWriterFactory;
+import com.gedcom.writers.IGedcomDataWriter;
 
 public class GedcomParser {
 

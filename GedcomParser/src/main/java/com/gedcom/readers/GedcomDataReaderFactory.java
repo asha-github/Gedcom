@@ -1,4 +1,4 @@
-package com.aconex.gedcom.readers;
+package com.gedcom.readers;
 
 /**
  * Factory class for the creation of data reader objects

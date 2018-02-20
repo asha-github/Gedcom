@@ -1,4 +1,4 @@
-package com.aconex.gedcom.readers;
+package com.gedcom.readers;
 
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -14,10 +14,10 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.reflect.internal.WhiteboxImpl;
 
-import com.aconex.gedcom.core.DataNode;
-import com.aconex.gedcom.core.DataStore;
-import com.aconex.gedcom.exception.GedcomParserErrors;
-import com.aconex.gedcom.exception.GedcomParserException;
+import com.gedcom.core.DataNode;
+import com.gedcom.core.DataStore;
+import com.gedcom.exception.GedcomParserErrors;
+import com.gedcom.exception.GedcomParserException;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(DataStore.class)

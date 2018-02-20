@@ -1,4 +1,4 @@
-package com.aconex.gedcom.writers;
+package com.gedcom.writers;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -12,9 +12,9 @@ import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
-import com.aconex.gedcom.core.DataNode;
-import com.aconex.gedcom.exception.GedcomParserErrors;
-import com.aconex.gedcom.exception.GedcomParserException;
+import com.gedcom.core.DataNode;
+import com.gedcom.exception.GedcomParserErrors;
+import com.gedcom.exception.GedcomParserException;
 
 /**
  * Class responsible for generating XML for the Gedcom data provided in tree

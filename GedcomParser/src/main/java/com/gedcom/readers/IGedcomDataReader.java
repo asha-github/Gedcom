@@ -1,7 +1,7 @@
-package com.aconex.gedcom.readers;
+package com.gedcom.readers;
 
-import com.aconex.gedcom.core.DataNode;
-import com.aconex.gedcom.exception.GedcomParserException;
+import com.gedcom.core.DataNode;
+import com.gedcom.exception.GedcomParserException;
 
 /**
  * Interface definition for gedcom file reader

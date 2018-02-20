@@ -1,8 +1,8 @@
-package com.aconex.gedcom;
+package com.gedcom;
 
 import java.io.File;
 
-import com.aconex.gedcom.core.GedcomParser;
+import com.gedcom.core.GedcomParser;
 
 /**
  * Main class of Gedcom Parser Application

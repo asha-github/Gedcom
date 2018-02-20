@@ -1,4 +1,4 @@
-package com.aconex.gedcom.core;
+package com.gedcom.core;
 
 import java.util.LinkedList;
 import java.util.List;

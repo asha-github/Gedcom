@@ -1,4 +1,4 @@
-package com.aconex.gedcom.exception;
+package com.gedcom.exception;
 
 /**
  * Class to handle all the exceptions that can come during parsing

@@ -1,4 +1,4 @@
-package com.aconex.gedcom.exception;
+package com.gedcom.exception;
 
 /**
  * Enum representing the error constants

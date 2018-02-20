@@ -1,4 +1,4 @@
-package com.aconex.gedcom.writers;
+package com.gedcom.writers;
 
 /**
  * Factory class for the creation of data writer objects

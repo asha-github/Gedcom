@@ -1,6 +1,6 @@
-package com.aconex.gedcom.core;
+package com.gedcom.core;
 
-import com.aconex.gedcom.exception.GedcomParserException;
+import com.gedcom.exception.GedcomParserException;
 
 /**
  * Class responsible for creating a tree out of the data provided.
