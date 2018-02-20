@@ -15,28 +15,21 @@ In general, each line is formatted thus:
 The LEVEL is an integer, representing the current depth in the tree. If subsequent lines have greater levels than the current node, they are children of the current node.
 TAG-OR-ID is either a tag that identifies the type of data in that node, or it is a unique identifier. Tags are 3- or 4-letter words in uppercase. The unique identifiers are always text surrounded by "@" characters (i.e., "@I54@"). If an ID is given, the DATA is the type of the subtree that is identified.
 So, to take the example given above apart:
-1. "0@I1@INDI".ThisstartsanewsubtreeoftypeINDI(individual).Theidforthis
-individual is "@I1@".
-2. "1NAMEJamisGordon/Buck/".ThisstartsaNAMEsubtreewithavalueof
-"Jamis Gordon /Buck/".
-3. "2SURNBuck".ThisisasubelementoftheNAMEsubtree,oftypeSURN
-("surname").
-4. "2GIVNJamisGordon".ThisisasubelementoftheNAMEsubtree,oftypeGIVN
-(“given name”).
-5. "1SEXM".CreatesanewsubelementoftheINDIelement,oftype"SEX"(i.e.,
-"gender").
-And so forth...
+1. "0@I1@INDI".This starts a new subtree of type INDI(individual).The id for this individual is "@I1@".
+2. "1NAMEJamisGordon/Buck/".This starts a NAME subtree with a value of "Jamis Gordon /Buck/".
+3. "2SURNBuck".This is a subelement of the NAME subtree, of type SURN ("surname").
+4. "2GIVNJamisGordon".This is a subelement of the NAME subtree, of type GIVN (“given name”).
+5. "1SEXM".CreatesanewsubelementoftheINDIelement,oftype"SEX"(i.e.,"gender").
 Variable whitespace is allowed between the level and the tag. Blank lines are ignored.
- The Challenge
-The challenge, then, is to create a parser that takes a GEDCOM file as input and converts it to XML. The snippet of GEDCOM given above would become:
+ The challenge, then, is to create a parser that takes a GEDCOM file as input and converts it to XML. The snippet of GEDCOM given above would become:
 <gedcom>
   <indi id="@I1@">
 <name value="Jamis Gordon /Buck/">   <surn>Buck</surn>
   <givn>Jamis Gordon</givn> </name>
-<sex>M</sex> ...
+<sex>M</sex>
   </indi>
-  ... </gedcom>
-
+ </gedcom>
+  
 DESIGN : 
 	1. Data reader will parse the data in the input file and fills up an intermediate data store implemented as tree. Data writer will read from intermediate data store and convert it to the required format. SRP is strongly followed.
 	2. Data reader part and writer part has been designed to be loosely coupled. Intermediate data store is added so that writer and reader can be changed independently.
