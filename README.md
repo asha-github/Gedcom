@@ -21,14 +21,7 @@ So, to take the example given above apart:
 4. "2GIVNJamisGordon".This is a subelement of the NAME subtree, of type GIVN (“given name”).
 5. "1SEXM".CreatesanewsubelementoftheINDIelement,oftype"SEX"(i.e.,"gender").
 Variable whitespace is allowed between the level and the tag. Blank lines are ignored.
- The challenge, then, is to create a parser that takes a GEDCOM file as input and converts it to XML. The snippet of GEDCOM given above would become:
-<gedcom>
-  <indi id="@I1@">
-<name value="Jamis Gordon /Buck/">   <surn>Buck</surn>
-  <givn>Jamis Gordon</givn> </name>
-<sex>M</sex>
-  </indi>
- </gedcom>
+ The challenge, then, is to create a parser that takes a GEDCOM file as input and converts it to XML. 
   
 DESIGN : 
 	1. Data reader will parse the data in the input file and fills up an intermediate data store implemented as tree. Data writer will read from intermediate data store and convert it to the required format. SRP is strongly followed.
